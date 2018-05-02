@@ -58,11 +58,11 @@ namespace MusicManage
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "52460247169-e5hkb7f9h4lb83601buftvkku3klm8n2.apps.googleusercontent.com",
+                ClientSecret = "PsGw7g_itAag8c-qr9dJBNgT"
+            });
         }
     }
 }

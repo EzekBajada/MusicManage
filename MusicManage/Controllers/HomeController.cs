@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace MusicManage.Controllers
 {
+
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -20,6 +22,7 @@ namespace MusicManage.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
