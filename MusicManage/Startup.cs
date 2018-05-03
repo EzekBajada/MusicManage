@@ -27,26 +27,26 @@ namespace MusicManage
             if (!roleManager.RoleExists("Admin"))
             {
 
-                // first we create Admin rool   
+                // first we create Admin role   
                 var role = new IdentityRole();
                 role.Name = "Admin";
                 roleManager.Create(role);
 
                 //Here we create a Admin super user who will maintain the website                  
 
-                var user = new ApplicationUser();
-                user.UserName = "Ezekiel";
-                user.Email = "ezekiel.bajada.16@um.edu.mt";
-                string userPWD = "123live@Json";
+                //var user = new ApplicationUser();
+                //user.UserName = "Ezekiel";
+                //user.Email = "ezekiel.bajada.16@um.edu.mt";
+                //string userPWD = "123live@Json";
 
-                var chkUser = UserManager.Create(user,userPWD);
+                //var chkUser = UserManager.Create(user,userPWD);
 
-                //Add default User to Role Admin   
-                if (chkUser.Succeeded)
-                {
-                    var result1 = UserManager.AddToRole(user.Id, "Admin");
+                ////Add default User to Role Admin   
+                //if (chkUser.Succeeded)
+                //{
+                //    var result1 = UserManager.AddToRole(user.Id, "Admin");
 
-                }
+                //}
             }
 
 
