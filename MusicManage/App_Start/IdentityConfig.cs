@@ -18,6 +18,7 @@ using System.Diagnostics;
 
 
 
+
 namespace MusicManage
 {
     public class EmailService : IIdentityMessageService
@@ -67,7 +68,17 @@ namespace MusicManage
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
+
+        var soapSms = new ASPSMSX2.ASPSMSX2SoapClient("ASPSMSX2Soap");
+        soapSms.SendSimpleTextSMS(
+            ConfigurationManager.AppSettings["SMSAccountIdentification"],
+            ConfigurationManager.AppSettings["SMSAccountPassword"],
+            message.Destination,
+            ConfigurationManager.AppSettings["SMSAccountFrom"],
+            message.Body);
+        soapSms.Close();
+        return Task.FromResult(0);
+          
         }
     }
 
